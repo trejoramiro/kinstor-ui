@@ -1,0 +1,14 @@
+<p-dialog [(visible)]="isModalVisible" [baseZIndex]="10000" [modal]="true" [style]="{width: '90vw'}">
+    <div class="p-grid">
+        <div class="p-col-2">
+            <div>
+                <img class="modal-image" src={{book.image_url}} alt={{book.book_title}}  width="160" height="250">
+            </div>
+        </div>
+        <div class="p-col-10 modal-body">
+            <h2 class="modal-book-title">{{ book.book_title }}</h2>
+            <p>by {{ book.author }}</p>
+            <p>{{ book.description }}</p>
+        </div>
+    </div>
+</p-dialog>
