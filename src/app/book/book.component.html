@@ -2,12 +2,12 @@
     <app-book-modal [book]="book" [isModalVisible]="isBookModalVisible"></app-book-modal>
     <div class="sub-container">
         <div class="img">
-            <img src={{book.image_url}} alt={{book.book_title}}  width="200" height="300">
+            <img src={{book.ImageUrl}} alt={{book.BookTitle}}  width="200" height="300">
         </div>
         <h4>
             <span class="book-name">
-                <span class="title">{{ book.book_title }}</span>
-                <span class="author">By {{ book.author }}</span>
+                <span class="title">{{ book.BookTitle }}</span>
+                <span class="author">By {{ book.BookAuthor }}</span>
             </span>
         </h4>
     </div>

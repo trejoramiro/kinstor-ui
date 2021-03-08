@@ -7,13 +7,13 @@ import { BOOKS } from '../books'
   providedIn: 'root'
 })
 export class BookService {
-  private productUrl = '';
+  private productUrl = 'https://sqijygkgql.execute-api.us-west-2.amazonaws.com/test/recommendation';
 
   constructor(private http: HttpClient) { }
 
-  // getBooks(): Observable<any[]> {
-  //    return this.http.get<any[]>(this.productUrl);
-  // }
+  getBooks(): Observable<any> {
+     return this.http.get<any>('http://localhost:4200/api' + '?BookTitle=1984');
+  }
 
   getDummyData() {
     return this.generateNumberOfBooks(20);
