@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DialogModule } from 'primeng/dialog'
 
 @Component({
   selector: 'app-book-modal',
@@ -9,11 +8,13 @@ import { DialogModule } from 'primeng/dialog'
 export class BookModalComponent implements OnInit {
 
   @Input() book: any;
-  @Input() isModalVisible: boolean;
+  @Input() index: number;
+  modalName = '';
 
   constructor() { }
 
   ngOnInit(): void {
+    this.modalName = `exampleModal${this.index}`
   }
 
 }

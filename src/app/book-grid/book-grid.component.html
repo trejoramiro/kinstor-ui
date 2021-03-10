@@ -1,4 +1,23 @@
-<div class="book-grid p-d-flex p-flex-wrap">
-    <app-book *ngFor="let book of books" [book]="book">
-    </app-book>
+<div class="container">
+    <div class="row">
+        <div class="col-sm sub-header">
+            <h5>Search based on 1984</h5>
+        </div>
+    </div>
+    <div class="book-grid">
+        <div class="row justify-content-center">
+            <div class="text-center">
+                <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status" [hidden]="hideSpinner">
+                  <span class="sr-only">Loading...</span>
+                </div>
+              </div>
+        </div>
+        <div class="row justify-content-center">
+            <div *ngIf="showZeroResults">
+                0 results
+            </div>
+            <app-book *ngFor="let book of searchResults; let indexOfElement=index;" [book]="book"[index]="indexOfElement">
+            </app-book>
+        </div>
+    </div>
 </div>

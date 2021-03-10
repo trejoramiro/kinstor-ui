@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BookComponent implements OnInit {
   @Input() book: any; 
-  isBookModalVisible: boolean;
+  @Input() index: number
 
   constructor() { }
 
@@ -15,7 +15,8 @@ export class BookComponent implements OnInit {
   }
 
   showBookModal() {
-    this.isBookModalVisible = true;
-    console.log('isBookModalVisible ', this.isBookModalVisible);
+   
   }
+
+
 }

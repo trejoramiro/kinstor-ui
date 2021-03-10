@@ -12,11 +12,11 @@ export class BookService {
   constructor(private http: HttpClient) { }
 
   getBooks(): Observable<any> {
-     return this.http.get<any>('http://localhost:4200/api' + '?BookTitle=1984');
+    return this.http.get<any>('http://localhost:4200/api' + '?BookTitle=1984');
   }
 
   getDummyData() {
-    return this.generateNumberOfBooks(20);
+    return this.generateNumberOfBooks(13);
   }
 
   private generateNumberOfBooks(number: number) {

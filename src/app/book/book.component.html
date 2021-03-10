@@ -1,14 +1,6 @@
-<div class="book-box" (click)="showBookModal()">
-    <app-book-modal [book]="book" [isModalVisible]="isBookModalVisible"></app-book-modal>
-    <div class="sub-container">
-        <div class="img">
-            <img src={{book.ImageUrl}} alt={{book.BookTitle}}  width="200" height="300">
-        </div>
-        <h4>
-            <span class="book-name">
-                <span class="title">{{ book.BookTitle }}</span>
-                <span class="author">By {{ book.BookAuthor }}</span>
-            </span>
-        </h4>
+<div class="book"  (click)="showBookModal()" data-toggle="modal" data-target="#exampleModal">
+    <div class="col-4">
+        <img class="img" src={{book.ImageUrl}} alt={{book.BookTitle}} width="200" height="300">
     </div>
+    <app-book-modal [book]="book" [index]="index"></app-book-modal> 
 </div>
