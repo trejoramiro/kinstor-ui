@@ -18,6 +18,7 @@ export class BookGridComponent implements OnInit {
 
   ngOnInit(): void {
     this.hideSpinner = false;
+    this.searchResults = this.bookService.getDummyData();
     this.bookService.getBooks().subscribe({
       next: books => {
         console.log('**' , JSON.parse(books));
@@ -25,13 +26,13 @@ export class BookGridComponent implements OnInit {
         parsedBooks.map((book) => {
           book.ImageUrl = `http://covers.openlibrary.org/b/isbn/0${book.ISBN}-L.jpg`;
         })
-        this.searchResults = parsedBooks;
-        this.searchResults = this.searchResults.concat(this.bookService.getDummyData());
+        this.searchResults = this.searchResults.concat(parsedBooks);
         this.hideSpinner = true;
       },
       error: err => {
         this.errorMessage = err;
         this.showZeroResults = true;
+        this.hideSpinner = true;
       }
     });
   }
