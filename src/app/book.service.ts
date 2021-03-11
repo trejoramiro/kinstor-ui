@@ -11,8 +11,8 @@ export class BookService {
 
   constructor(private http: HttpClient) { }
 
-  getBooks(): Observable<any> {
-    return this.http.get<any>('http://localhost:4200/api' + '?BookTitle=1984');
+  getBooks(bookTitle: string): Observable<any> {
+    return this.http.get<any>('http://localhost:4200/api' + `?BookTitle=${bookTitle}`);
   }
 
   getDummyData() {

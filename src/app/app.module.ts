@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 import { BookGridComponent } from './book-grid/book-grid.component';
 import { BookModalComponent } from './book-modal/book-modal.component';
 import { BookComponent } from './book/book.component';
@@ -20,6 +21,7 @@ import { BookComponent } from './book/book.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

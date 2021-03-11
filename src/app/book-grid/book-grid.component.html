@@ -1,7 +1,20 @@
 <div class="container">
+    <div class="row justify-content-center">
+        <h1>Recommendations</h1>
+    </div>
+    <div class="row justify-content-center">
+        <div class="input-group col-md-4 rec-search-bar">
+            <input class="form-control py-2" type="search" id="searchRec" [(ngModel)]="bookTitle" name="bookTitle" placeholder="Enter a book title" id="example-search-input">
+            <span class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" (click)="searchRecommendationsForBookTitle()">
+                    <i class="fa fa-search"></i>
+                </button>
+            </span>
+        </div>
+    </div>
     <div class="row">
-        <div class="col-sm sub-header">
-            <h5>Search based on 1984</h5>
+        <div class="col-sm sub-header text-center" [hidden]="hideSubTitle">
+            <h6 class="text-muted">Listing {{searchResults.length}} books</h6>
         </div>
     </div>
     <div class="book-grid">
@@ -16,7 +29,7 @@
             <div *ngIf="showZeroResults">
                 0 results
             </div>
-            <app-book *ngFor="let book of searchResults; let indexOfElement=index;" [book]="book"[index]="indexOfElement">
+            <app-book *ngFor="let book of searchResults; let indexOfElement=index;" [book]="book"  [index]="indexOfElement">
             </app-book>
         </div>
     </div>
