@@ -7,12 +7,12 @@ import { BOOKS } from '../books'
   providedIn: 'root'
 })
 export class BookService {
-  private productUrl = 'https://sqijygkgql.execute-api.us-west-2.amazonaws.com/test/recommendation';
+  private recommendationsUrl = 'https://sqijygkgql.execute-api.us-west-2.amazonaws.com/test/recommendation';
 
   constructor(private http: HttpClient) { }
 
   getBooks(bookTitle: string): Observable<any> {
-    return this.http.get<any>('http://localhost:4200/api' + `?BookTitle=${bookTitle}`);
+    return this.http.get<any>(this.recommendationsUrl + `?BookTitle=${bookTitle}`);
   }
 
   getDummyData() {
