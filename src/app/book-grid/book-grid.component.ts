@@ -28,18 +28,17 @@ export class BookGridComponent implements OnInit {
     }
 
     this.hideSpinner = false;
-    this.searchResults = this.bookService.getDummyData();
 
     this.bookService.getBooks(this.bookTitle).subscribe({
       next: books => {
-        console.log('**' , JSON.parse(books));
+        console.log('***' , JSON.parse(books));
         let parsedBooks = JSON.parse(books);
         parsedBooks.map((book) => {
           book.ImageUrl = `http://covers.openlibrary.org/b/isbn/0${book.ISBN}-L.jpg`;
         })
         this.searchResults = this.searchResults.concat(parsedBooks);
         this.hideSubTitle = false;
-        this.showZeroResults = (this.searchResults.length === 0); 
+        // this.showZeroResults = (this.searchResults.length === 0); 
         this.hideSpinner = true;
       },
       error: err => {
