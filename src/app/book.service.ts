@@ -16,7 +16,7 @@ export class BookService {
   }
 
   getCoverForBook(isbn: string): Observable<any> {
-    return this.http.get<any>(`http://covers.openlibrary.org/b/isbn/0${isbn}-L.jpg?default=false`);
+    return this.http.get<any>(`https://covers.openlibrary.org/b/isbn/0${isbn}-L.jpg?default=false`);
   }
 
   getBookInformation(isbn: string): Observable<any> {

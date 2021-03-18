@@ -17,9 +17,9 @@ export class BookModalComponent implements OnInit {
   ngOnInit(): void {
     this.bookService.getBookInformation(this.book.ISBN).subscribe({ 
       next: data => {
+        console.log('isbn', this.book.ISBN);
         this.bookInformation = data[`ISBN:0${this.book.ISBN}`];
-        console.log(data);
-        console.log('***', this.bookInformation.details.description);
+        console.log('data', data);
       }
     });
   }
