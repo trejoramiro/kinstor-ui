@@ -1,6 +1,6 @@
-<div class="book"  (click)="showBookModal()" data-toggle="modal" data-target="#exampleModal">
+<div class="book"  (click)="openModal()" data-toggle="modal" data-target="#exampleModal">
     <div class="col-4">
         <img class="img" src={{book.ImageUrl}} alt={{book.BookTitle}} width="200" height="300">
+        <p *ngIf="book.ImageUrl === './assets/default_book_cover.png'" class="carousel-caption">{{book.BookTitle || ''}}</p>
     </div>
-    <app-book-modal [book]="book" [index]="index"></app-book-modal> 
 </div>

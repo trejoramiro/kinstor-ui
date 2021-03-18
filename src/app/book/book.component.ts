@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { BookModalComponent } from '../book-modal/book-modal.component';
 
 @Component({
   selector: 'app-book',
@@ -9,12 +11,14 @@ export class BookComponent implements OnInit {
   @Input() book: any; 
   @Input() index: number
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
   }
 
-  showBookModal() {
+  openModal() {
+    const modalRef = this.modalService.open(BookModalComponent, { centered: true,  size: 'lg' });
+    modalRef.componentInstance.book = this.book;
   }
 
 

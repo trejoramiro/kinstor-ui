@@ -31,10 +31,18 @@ export class BookGridComponent implements OnInit {
 
     this.bookService.getBooks(this.bookTitle).subscribe({
       next: books => {
-        console.log('***' , JSON.parse(books));
+        // console.log('***' , JSON.parse(books));
         let parsedBooks = JSON.parse(books);
         parsedBooks.map((book) => {
           book.ImageUrl = `http://covers.openlibrary.org/b/isbn/0${book.ISBN}-L.jpg`;
+          
+          this.bookService.getCoverForBook(book.ISBN).subscribe(
+            response => console.log('***', response),
+            err => {
+              if (err.status === 404)
+                book.ImageUrl = './assets/default_book_cover.png';
+              }
+          );
         })
         this.searchResults = this.searchResults.concat(parsedBooks);
         this.hideSubTitle = false;

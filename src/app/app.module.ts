@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { BookGridComponent } from './book-grid/book-grid.component';
 import { BookModalComponent } from './book-modal/book-modal.component';
 import { BookComponent } from './book/book.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BookComponent } from './book/book.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

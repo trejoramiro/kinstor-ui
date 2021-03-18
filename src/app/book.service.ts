@@ -15,6 +15,14 @@ export class BookService {
     return this.http.get<any>(this.recommendationsUrl + `?BookTitle=${bookTitle}`);
   }
 
+  getCoverForBook(isbn: string): Observable<any> {
+    return this.http.get<any>(`http://covers.openlibrary.org/b/isbn/0${isbn}-L.jpg?default=false`);
+  }
+
+  getBookInformation(isbn: string): Observable<any> {
+    return this.http.get<any>(`https://openlibrary.org/api/books?bibkeys=ISBN:0${isbn}&jscmd=data&format=json&jscmd=details`);
+  }
+
   getDummyData() {
     return this.generateNumberOfBooks(13);
   }
