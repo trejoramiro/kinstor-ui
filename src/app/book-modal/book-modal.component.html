@@ -14,9 +14,9 @@
           </div>
           <div class="col-8">
             <h2 class="modal-book-title">{{ book.BookTitle }}</h2>
-            <p>by {{ book.BookAuthor }} {{ bookInformation["details"]["copyright_date"] }}</p>
-            <p>{{ bookInformation["details"]["genres"] }}</p> 
-            <p>{{ bookInformation["details"]["description"] }}</p>
+            <p>by {{ book.BookAuthor }}</p>
+            <p>{{ showGenre() }}</p> 
+            <p>{{ showBookDescription() }}</p>
           </div>
         </div>
       </div>
