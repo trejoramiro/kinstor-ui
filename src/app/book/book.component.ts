@@ -17,7 +17,7 @@ export class BookComponent implements OnInit {
   }
 
   openModal() {
-    const modalRef = this.modalService.open(BookModalComponent, { centered: true,  size: 'lg' });
+    const modalRef = this.modalService.open(BookModalComponent, { size: 'lg' });
     modalRef.componentInstance.book = this.book;
   }
 
